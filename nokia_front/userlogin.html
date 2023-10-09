@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login - Fault Recommendation System</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Set a minimum height to stretch the layout */
+        }
+
+        .header {
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            background-position: center;
+            padding: 20px 0;
+            text-align: center;
+            color: #0d0d0e;
+            margin: 0;
+            animation: fadeIn 0s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            height: 60px;
+            width: 100%;
+        }
+
+        .logo {
+            max-width: 190px;
+            animation: fadeIn 0s ease-in-out infinite;
+        }
+
+        .navbar {
+            background-color: transparent;
+            overflow: hidden;
+            border-top: 2px solid #0d0d0e;
+            padding-top: 10px;
+            position: absolute;
+            top: 100%;
+            right: 10px;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar a:hover {
+            color: #2ecc71;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Add the styles for the login form */
+        #loginForm {
+            background: linear-gradient(to bottom, #a6e4f7, #c1f7d5);
+            padding: 70px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin-top: 35vh;
+            position: relative; /* Add this line */
+            top: 10%; /* Add this line */
+            transform: translateY(-50%); /* Add this line */
+        }
+        
+
+        label {
+            font-size: 24px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            font-size: 16px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #loginButton {
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            border: none;
+            padding: 10px 10px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #loginButton:hover {
+            border: none;
+        }
+
+        /* Center-align the login page text */
+        h1 {
+            font-weight: bold;
+            font-size: 36px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer {
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Add the following CSS to push the footer to the bottom */
+        .wrapper {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <img src="https://www.nokia.com/sites/default/files/styles/scale_720_no_crop/public/2023-02/nokia-refreshed-logo-2_1.png.webp" alt="Nokia Logo" class="logo">
+            <div class="navbar">
+                <a href="https://www.nokia.com/" target="_blank">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </header>
+
+        <div style="text-align: center;">
+            <form id="loginForm">
+                <label for="USERNAME">USERNAME:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">PASSWORD:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <div class="button-container">
+                    <button type="button" id="loginButton">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="gradient-background">
+            
+        </div>
+
+        <div id="image-container" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            
+      </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 Fault Recommendation System</p>
+    </div>
+
+    <script>
+        const loginButton = document.getElementById('loginButton');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+
+        loginButton.addEventListener('click', () => {
+            // Implement your authentication logic here.
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            // For demonstration purposes, let's use a simple username and password check.
+            if (username === 'aditya@sinha' && password === 'aditya@nokia') {
+                alert('Login successful!');
+                // Redirect to the original page after a successful login.
+                window.location.href = 'fault_recommendation_system.html';
+            } else {
+                alert('Login failed. Please check your credentials.');
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+ 

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../basics"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "basics"
+	}
+}

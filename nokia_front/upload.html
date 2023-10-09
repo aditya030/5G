@@ -1,0 +1,274 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html>
+<head>
+    <title>Upload Image - Fault Recommendation System</title>
+</head>
+<body>
+    <h2>Upload Image</h2>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="faultId">Failure ID:</label>
+        <input type="text" id="faultId" name="faultId" required>
+        <br>
+        <label for="viewType">View Type:</label>
+        <select id="viewType" name="viewType" required>
+            <option value="real">Real View</option>
+            <option value="schematic">Schematic View</option>
+            <option value="description">Description View</option>
+        </select>
+        <br>
+        <label for="image">Select an Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <br>
+        <input type="submit" name="upload" value="Upload">
+    </form>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload Image - Fault Recommendation System</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            background-position: center;
+            padding: 20px 0;
+            text-align: center;
+            color: #0d0d0e;
+            margin: 0;
+            animation: fadeIn 0s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            height: 60px;
+            width: 100%;
+        }
+
+        .logo {
+            max-width: 190px;
+            animation: fadeIn 0s ease-in-out infinite;
+        }
+
+        .navbar {
+            background-color: transparent;
+            overflow: hidden;
+            padding-top: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #fff;
+            color: #2ecc71;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Add the styles for the upload form */
+        .upload-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 400px; /* Adjust as needed */
+    margin-top: 20vh; /* Adjust as needed */
+}
+
+        #uploadForm {
+            max-width: 400px; 
+            margin: 0 auto; 
+            margin-top: 35vh;
+            background: linear-gradient(to bottom, #a6e4f7, #c1f7d5);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin-top: 35vh;
+            position: relative;
+            top: 10%;
+            transform: translateY(-50%);
+        }
+
+        label {
+            font-size: 24px;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            font-size: 16px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+            background: linear-gradient(to bottom, #2ecc71, #3498db);
+            color: white;
+        }
+
+        select {
+            font-size: 16px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #uploadButton {
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            border: none;
+            padding: 50px 50px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #uploadButton:hover {
+            border: none;
+        }
+
+        /* Center-align the page text */
+        h1 {
+            font-weight: bold;
+            font-size: 36px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer {
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+
+        /* Add the following CSS to push the footer to the bottom */
+        .wrapper {
+    flex: 1;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.gradient-label,
+.gradient-input {
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.gradient-label {
+    background: linear-gradient(to bottom, #2ecc71, #3498db);
+}
+
+.gradient-input {
+    background: linear-gradient(to bottom, #2ecc71, #3498db);
+}
+
+    </style>
+</head>
+
+<!-- <body>
+    <div class="wrapper">
+        <header class="header">
+            <img src="https://www.nokia.com/sites/default/files/styles/scale_720_no_crop/public/2023-02/nokia-refreshed-logo-2_1.png.webp" alt="Nokia Logo" class="logo">
+            <div class="navbar">
+                <a href="contact.html">Contact Us</a>
+                <a href="about.html">About Us</a>
+                <a href="upload.html">Upload</a>
+            </div>
+        </header> -->
+
+        <body>
+            <div class="wrapper">
+                <header class="header">
+                    <img src="https://www.nokia.com/sites/default/files/styles/scale_720_no_crop/public/2023-02/nokia-refreshed-logo-2_1.png.webp" alt="Nokia Logo" class="logo">
+                    <div class="navbar">
+                        <a href="contact.html">Contact Us</a>
+                        <a href="about.html">About Us</a>
+                        <a href="upload.html">Upload</a>
+                    </div>
+                </header>
+        
+                <div class="upload-container">
+                    <h2>Upload Image</h2>
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        <label for="faultId">Failure ID:</label>
+                        <input type="text" id="faultId" name="faultId" required>
+                        <br>
+                        <label for="viewType" class="gradient-label">View Type:</label>
+<select id="viewType" name="viewType" required class="gradient-input">
+    <option value="real">Real View</option>
+    <option value="schematic">Schematic View</option>
+    <option value="description">Description View</option>
+</select>
+
+                        <br>
+                        <label for="image">Select an Image:</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                        <br>
+                        
+                        <input type="submit" name="upload" value="Upload">
+                    </form>
+                </div>
+        
+                <div class="gradient-background">
+                    <!-- Your main content goes here -->
+                </div>
+        
+                <div id="image-container" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <!-- The fetched image will be displayed here -->
+                </div>
+            </div>
+        
+            <div class="footer">
+                <p>&copy; 2023 Fault Recommendation System</p>
+            </div>
+        </body>
+        
+
+</html>
